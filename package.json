@@ -1,0 +1,21 @@
+{
+  "name": "pokemonlistquiz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "concurrently \"tsc --watch index.ts && tsc index.ts\" \" tsc --watch info.ts && tsc info.ts\" \"browser-sync start --server --files ='index.html'\"",
+    "copy-jquery": "cpx ./node_modules/jquery/dist/jquery.js dist/",
+    "start": "cpx *.{html,css,js} dist/ && npm run copy-jquery"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jquery": "^3.2.16"
+  },
+  "dependencies": {
+    "cpx": "^1.5.0",
+    "jquery": "^3.2.1"
+  }
+}
